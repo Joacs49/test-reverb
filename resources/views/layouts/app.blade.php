@@ -32,6 +32,6 @@
                 {{ $slot }}
             </main>
         </div>
-        @livewire('chat-box')
+        @livewire('chatbox')
     </body>
 </html>

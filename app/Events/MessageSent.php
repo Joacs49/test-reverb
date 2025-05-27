@@ -19,21 +19,26 @@ class MessageSent implements ShouldBroadcast
         public string $text
     ) {}
 
-    public function broadcastOn(): Channel
+     public function broadcastOn(): Channel
     {
-        return new Channel('messages');
+        return new PrivateChannel('messages');
     }
 
-    public function broadcastAs(): string
-    {
-        return 'MessageSent';
-    }
+    // public function broadcastOn(): Channel
+    // {
+    //     return new Channel('messages');
+    // }
 
-    public function broadcastWith(): array
-    {
-        return [
-            'name' => $this->name,
-            'text' => $this->text,
-        ];
-    }
+    // public function broadcastAs(): string
+    // {
+    //     return 'MessageSent';
+    // }
+
+    // public function broadcastWith(): array
+    // {
+    //     return [
+    //         'name' => $this->name,
+    //         'text' => $this->text,
+    //     ];
+    // }
 }
