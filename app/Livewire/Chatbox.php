@@ -13,6 +13,7 @@ class Chatbox extends Component
      */
     public array $messages = [];
     public string $message = '';
+    // public Room $room;
 
     public function addMessage()
     {
@@ -22,6 +23,7 @@ class Chatbox extends Component
     }
 
     // #[On('echo:messages,MessageSent')]
+    // ('echo-private:messages.rooms.{room.id},MessageSent')]
     #[On('echo-private:messages,MessageSent')]
     public function onMessageSent($event)
     {
