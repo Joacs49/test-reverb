@@ -123,7 +123,7 @@ class ChatBox extends Component
 }
 
 # 🔐 Canales privados y autorización
-Si usás un canal privado, registralo en routes/channels.php:
+Si usas un canal privado, registralo en routes/channels.php:
 
 Broadcast::channel('messages', function ($user) {
     return true; // o lógica de autorización
@@ -135,12 +135,12 @@ Broadcast::channel('messages.rooms.{id}', function ($user, $id) {
     return $user->rooms->contains($id);
 });
 
-Este patrón se usa cuando querés restringir el acceso a salas de chat específicas según pertenencia.
+Este patrón se usa cuando quieres restringir el acceso a salas de chat específicas según pertenencia.
 
 # 🛠️ Heroicons para Livewire UI
 composer require blade-ui-kit/blade-heroicons
 
-Esto instala un paquete con íconos SVG que podés usar en tus vistas Blade con una sintaxis simple:
+Esto instala un paquete con íconos SVG que puedes usar en tus vistas Blade con una sintaxis simple:
 
 <x-heroicon-o-paper-airplane class="w-6 h-6 text-blue-500"/>
 
@@ -154,11 +154,11 @@ php artisan queue:work
 npm run dev
 php artisan serve
 
-Abrí la app en el navegador (iniciado sesión).
+Abrir la app en el navegador (iniciado sesión).
 
-Escribí un mensaje desde la vista ChatBox.
+Escribir un mensaje desde la vista ChatBox.
 
-En otra terminal ejecutá:
+En otra terminal ejecutar:
 
 php artisan send:message
 Observá cómo los mensajes aparecen en tiempo real en el navegador (DevTools → WebSockets).
